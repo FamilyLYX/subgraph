@@ -1,6 +1,35 @@
-type Gravatar @entity {
-  id: ID!
-  owner: Bytes!
-  displayName: String!
-  imageUrl: String!
+type Marketplace @entity {
+    id: ID!
+    totalVolumeLYX: BigDecimal!
+    # totalVolumeUSD: BigDecimal!
+    completedTrades: BigInt!
 }
+
+type Listing @entity{
+    id: ID!
+    # seller: Bytes!
+    collection: Bytes!
+    tokenId: Bytes!
+    price: BigInt!
+    url: String!
+    acceptFiat: Boolean!
+    collectionType: String!
+}
+
+type Trade @entity{
+    id: ID!
+    collection: Bytes!
+    tokenId: Bytes!
+    seller: Bytes!
+    buyer: Bytes!
+    escrow: Bytes!
+    status: String!
+    price: BigInt!
+    url: String!
+    acceptFiat: Boolean!
+    listingURL: String!
+    trackingId: String!
+    collectionType: String!
+}
+
+
